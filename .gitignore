@@ -5,3 +5,8 @@
 # 수집 원문 전체(기사 저작권·기자 연락처 포함) — 공개 저장소에서 제외
 output/raw/
 *.tmp
+
+output/*/raw/
+
+config.local.env
+output/*/mail-draft-log.md

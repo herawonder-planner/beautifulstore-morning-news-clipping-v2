@@ -64,3 +64,13 @@
 - 발견·수정: SKILL.md에 '샘플 파일 없음/빈 파일' 처리 규칙이 없어 project_builder가 추가(가상 내용 생성 금지).
 - 입력 바꿔보기용 기사 확인: 한국NGO신문 https://www.ngonews.kr/news/articleView.html?idxno=239591 (기사입력 2026.10.01 10:25) Aside로 제목·입력일 읽기 확인.
 - 참가자 직접 실행: 미확인.
+
+## 다음 개선 1+2 일부 · 전날 수집 + 시트 쌓기 + Gmail 임시보관함 초안 + 매일 8시 루틴 (2026-10-08, 참가자 요청)
+- 범위: 전날 '아름다운가게' 기사 검색·원문 읽기·키워드/중복/실패 판정, 수집 CSV·요약 초안, Google 시트 '2026 뉴스클리핑' 쌓기, Gmail 임시보관함 초안(발송 없음), 매일 08시 예약. 제외: 실제 발송·공유.
+- project_builder(Sonnet 5.5): search-news.sh, create-gmail-draft.sh, make-mail-html.sh, append-to-sheet.sh, daily-clipping 양식, 가상 검색 샘플, SKILL.md 6~9절, routine/daily-8am.md.
+- 총괄 실행 중 발견·수정: ① Git Bash `&` 치환 버그로 검색 주소가 깨짐 → 문자열 연결로 수정 ② 메일 HTML 표 값 누락 → make-mail-html.sh ③ gmail.search 불안정 → 작성 창 '임시보관함에 저장됨' 표시로 확인 ④ 시트 readSheet 재확인 실패 → CSV 내보내기로 확인·중복 방지.
+- 실제 실행(기준일 2026-10-07): 검색 10 / 원문 확인 3 / 접근 실패 0 / 제외(키워드 불일치) 3 / 중복 4. 근거 인용 9개 grep -F 원문 일치.
+- 시트: 헤더+10행 쌓임(CSV 내보내기로 확인), 같은 기준일 재실행 시 종료코드 6으로 건너뜀 확인.
+- Gmail: config.local.env의 수신 주소 수신 초안 임시저장 확인(16:53). 발송 없음. 남은 정리: 표가 깨진 이전 초안(16:45)과 시험 초안(16:46)은 담당자가 직접 삭제 필요.
+- 예약: Claude 앱 예약 작업 `beautifulstore-news-clipping-8am` 매일 08시대(앱 표시 08:12). 앱과 PC가 켜져 있고 Aside 로그인 필요.
+- 미확인: 예약 실행 1회차 결과, '네이버 Keep' 링크로 search-results.tsv 매체 칸이 틀리는 문제(최종 매체명은 원문에서 확인해 영향 없음).
