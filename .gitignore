@@ -1,0 +1,7 @@
+# 비밀값·개인 설정
+.env
+.env.*
+.claude/settings.local.json
+# 수집 원문 전체(기사 저작권·기자 연락처 포함) — 공개 저장소에서 제외
+output/raw/
+*.tmp
